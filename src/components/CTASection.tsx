@@ -3,18 +3,33 @@ import { motion } from 'framer-motion';
 
 const CTASection = () => {
     return (
-        <section className="brand-story" style={{ padding: '8rem 0' }}>
-            <motion.div
-                className="container text-center"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-            >
-                <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', marginBottom: '1rem' }}>Let's Find Your <span className="muted">Next Investment.</span></h2>
-                <p style={{ fontSize: '1.2rem', color: 'var(--color-muted)', marginBottom: '3rem' }}>Contact our private office to begin your discrete property search.</p>
-                <button className="stadium-btn">Schedule a Consultation &rarr;</button>
-            </motion.div>
+        <section className="cta-premium" id="contact">
+            <div className="cta-watermark">V&M</div>
+            <div className="container cta-content-premium">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
+                >
+                    <h2 className="cta-title">
+                        Let's Find Your <br />
+                        <span className="muted-cta">Next Investment.</span>
+                    </h2>
+                    <p className="cta-subtitle">Contact our private office to begin your discrete property search.</p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        className="cta-btn-wrapper"
+                    >
+                        <button className="stadium-btn massive-btn hover-sweep">
+                            Start The Conversation &rarr;
+                        </button>
+                    </motion.div>
+                </motion.div>
+            </div>
         </section>
     );
 };

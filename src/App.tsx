@@ -3,9 +3,9 @@ import './index.css';
 import HeroSection from './components/HeroSection';
 import FeaturedProperties from './components/FeaturedProperties';
 import BrandStory from './components/BrandStory';
-import TrustStats from './components/TrustStats';
 import ServicesSection from './components/ServicesSection';
-import LifestyleParallax from './components/LifestyleParallax';
+import BeforeAfterSection from './components/BeforeAfterSection';
+import TestimonialSection from './components/TestimonialSection';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
 
@@ -14,11 +14,13 @@ function App() {
     <ReactLenis root>
       <div className="app-container">
         <header className="header">
-          <div className="logo">V&M</div>
+          <a href="#" className="logo-img-link">
+            <img src="/logo.png" alt="V&M Properties" className="nav-logo-img" />
+          </a>
           <nav className="nav">
-            <a href="#properties">Properties</a>
-            <a href="#story">Our Story</a>
-            <a href="#contact">Contact</a>
+            <a href="#properties" className="nav-link">Properties</a>
+            <a href="#story" className="nav-link">Our Story</a>
+            <a href="#contact" className="nav-link">Contact</a>
           </nav>
         </header>
 
@@ -27,8 +29,8 @@ function App() {
           <BrandStory />
           <ServicesSection />
           <FeaturedProperties />
-          <LifestyleParallax />
-          <TrustStats />
+          <BeforeAfterSection />
+          <TestimonialSection />
           <CTASection />
         </main>
 
