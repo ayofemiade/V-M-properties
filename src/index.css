@@ -368,21 +368,25 @@ button {
   }
 }
 
-/* Hero Section */
-.hero-section {
+/* ─── Scroll-Pinned Hero Section ─── */
+.hero-scroll-section {
   position: relative;
+  height: 300vh;
+  /* scroll distance for the 4-phase animation */
+}
+
+/* Sticky viewport frame — stays pinned while parent scrolls */
+.hero-sticky {
+  position: sticky;
+  top: 0;
   height: 100vh;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
 .hero-bg {
   position: absolute;
   inset: -5%;
-  /* Extra size for scale animation */
   z-index: 0;
   will-change: transform;
 }
@@ -394,33 +398,28 @@ button {
   background-position: center;
 }
 
-.hero-gradient-dark {
+/* Vignette overlay (Dark) */
+.hero-vignette {
   position: absolute;
   inset: 0;
-  /* Multi-layer: base tint + radial vignette + edge darkening */
-  background:
-    linear-gradient(180deg,
-      rgba(0, 0, 0, 0.55) 0%,
-      /* very dark top: nav always readable */
-      rgba(0, 0, 0, 0.25) 40%,
-      /* lighter mid: image shows through */
-      rgba(0, 0, 0, 0.45) 75%,
-      /* darkens back down near bottom text */
-      rgba(0, 0, 0, 0.75) 100%);
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
   z-index: 1;
+  pointer-events: none;
 }
 
-.hero-gradient-dark::after {
-  content: '';
+/* White Veil overlay — fades in to isolate the logo cutout */
+.hero-white-veil {
   position: absolute;
   inset: 0;
-  /* Radial vignette darkens the edges to frame the image */
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.5) 100%);
+  background: #ffffff;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  z-index: 3;
   height: 100%;
   width: 100%;
   display: flex;
@@ -428,6 +427,11 @@ button {
   justify-content: center;
   color: #ffffff;
   padding-top: 25vh;
+  pointer-events: none;
+}
+
+.hero-content * {
+  pointer-events: auto;
 }
 
 .hero-title-container {
@@ -497,6 +501,57 @@ button {
 
 .premium-btn:hover .btn-arrow {
   transform: translateX(8px);
+}
+
+/* ─── Phase 3: Cinematic Logo Cutout Reveal ─── */
+.hero-logo-reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  gap: 0.5rem;
+}
+
+.hero-logo-cutout {
+  font-size: clamp(6rem, 24vw, 24rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  text-align: center;
+  /* The image paints INSIDE the text letters — the "cutout" window */
+  background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2500&q=80');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* Refined filter for luxury depth */
+  filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.05));
+  will-change: transform, opacity, letter-spacing;
+}
+
+.hero-logo-sub-text {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  letter-spacing: 0.6em;
+  color: #111;
+  /* White on hero, but black on white veil */
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 2rem;
+  transition: color 0.4s ease;
+}
+
+.hero-logo-tagline {
+  font-size: clamp(0.75rem, 1.5vw, 1.1rem);
+  letter-spacing: 0.25em;
+  color: #C6A87D;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 1rem;
 }
 
 /* Scroll indicator */
