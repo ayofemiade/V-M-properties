@@ -729,68 +729,131 @@ button {
 .services-right {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 2.5rem;
 }
 
+/* === New Premium Method Cards === */
 .service-card-premium {
   position: relative;
-  padding: 5rem 4rem;
-  background: #3A3A3A;
-  color: var(--color-primary);
-  border: 1px solid #4D4D4D;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
   overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.5s ease,
+    border-color 0.4s ease;
 }
 
 .service-card-premium:hover {
-  background: #252525;
-  transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(198, 168, 125, 0.2);
+  border-color: rgba(198, 168, 125, 0.25);
 }
 
-.service-card-premium .service-num-huge {
-  color: rgba(255, 255, 255, 0.15);
-}
-
-.service-card-premium:hover .service-num-huge {
-  color: rgba(255, 255, 255, 0.25);
-  transform: scale(1.1);
-}
-
-.service-num-huge {
+/* Gold accent bar that grows on hover */
+.card-gold-bar {
   position: absolute;
-  top: -2rem;
-  right: -2rem;
-  font-size: 18rem;
-  font-weight: 800;
-  line-height: 1;
-  pointer-events: none;
-  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, #C6A87D, #e8d5b0);
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 3;
 }
 
-.service-content-premium {
+.service-card-premium:hover .card-gold-bar {
+  width: 100%;
+}
+
+.service-card-inner {
+  padding: 3.5rem 4rem;
   position: relative;
   z-index: 2;
 }
 
-.service-content-premium h3 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+/* Top row: step number + decorative icon */
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.card-step-num {
+  font-size: 0.8rem;
+  color: #C6A87D;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.card-icon {
+  font-size: 1.4rem;
+  color: rgba(198, 168, 125, 0.3);
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.service-card-premium:hover .card-icon {
+  color: #C6A87D;
+  transform: rotate(45deg);
+}
+
+/* Title */
+.card-title {
+  font-size: 2.2rem;
   font-weight: 500;
-  color: var(--color-primary);
-  transition: color 0.6s ease;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.2rem;
+  line-height: 1.1;
 }
 
-.service-content-premium p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 90%;
-  transition: color 0.6s ease;
+/* Description */
+.card-desc {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 85%;
+  transition: color 0.4s ease;
 }
 
-.service-card-premium:hover p {
-  color: rgba(255, 255, 255, 0.9);
+.service-card-premium:hover .card-desc {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Arrow CTA */
+.card-arrow {
+  margin-top: 2.5rem;
+  font-size: 1.4rem;
+  color: #C6A87D;
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform 0.4s ease;
+}
+
+.service-card-premium:hover .card-arrow {
+  transform: translateX(8px);
+}
+
+/* Watermark number */
+.service-num-huge {
+  position: absolute;
+  bottom: -3rem;
+  right: -1rem;
+  font-size: 14rem;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  transition: color 0.5s ease, transform 0.5s ease;
+  z-index: 1;
+}
+
+.service-card-premium:hover .service-num-huge {
+  color: rgba(198, 168, 125, 0.06);
+  transform: scale(1.05);
 }
 
 @media (max-width: 1024px) {
@@ -802,15 +865,29 @@ button {
   .sticky-content {
     position: relative;
     top: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .services-right {
-    gap: 3rem;
+    gap: 2rem;
   }
 
-  .service-card-premium {
-    padding: 3rem 2rem;
+  .service-card-inner {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card-inner {
+    padding: 2rem 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
+
+  .card-desc {
+    max-width: 100%;
   }
 }
 

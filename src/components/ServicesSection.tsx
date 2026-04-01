@@ -1,13 +1,27 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
-const ServicesSection = () => {
-    const services = [
-        { num: "01", title: "Alignment", desc: "We align our vision with your ultimate lifestyle goals, mapping out exact properties that match your prestige before they ever hit the market." },
-        { num: "02", title: "Clarity", desc: "Transparent, discrete, and clear communication. You dictate the pace, and we orchestrate the logistics behind the scenes." },
-        { num: "03", title: "Execution", desc: "Seamless negotiations, flawless legal paperwork, and white-glove transition and relocation services." }
-    ];
+const services = [
+    {
+        num: "01",
+        title: "Alignment",
+        icon: "◈",
+        desc: "We align our vision with your ultimate lifestyle goals, mapping out exact properties that match your prestige before they ever hit the market."
+    },
+    {
+        num: "02",
+        title: "Clarity",
+        icon: "◎",
+        desc: "Transparent, discrete, and clear communication. You dictate the pace, and we orchestrate the logistics behind the scenes."
+    },
+    {
+        num: "03",
+        title: "Execution",
+        icon: "◆",
+        desc: "Seamless negotiations, flawless legal paperwork, and white-glove transition and relocation services."
+    }
+];
 
+const ServicesSection = () => {
     return (
         <section className="services-section-premium">
             <div className="container premium-services-grid">
@@ -30,16 +44,30 @@ const ServicesSection = () => {
                         <motion.div
                             className="service-card-premium"
                             key={idx}
-                            initial={{ opacity: 0, y: 100 }}
+                            initial={{ opacity: 0, y: 80 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "0px" }}
-                            transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.25, 1, 0.5, 1] }}
+                            transition={{ duration: 0.9, delay: idx * 0.12, ease: [0.25, 1, 0.5, 1] }}
                         >
-                            <div className="service-num-huge">{srv.num}</div>
-                            <div className="service-content-premium">
-                                <h3>{srv.title}</h3>
-                                <p>{srv.desc}</p>
+                            {/* Gold accent top bar */}
+                            <div className="card-gold-bar"></div>
+
+                            <div className="service-card-inner">
+                                {/* Step number + icon row */}
+                                <div className="card-top-row">
+                                    <span className="card-step-num">{srv.num}</span>
+                                    <span className="card-icon">{srv.icon}</span>
+                                </div>
+
+                                <h3 className="card-title">{srv.title}</h3>
+                                <p className="card-desc">{srv.desc}</p>
+
+                                {/* Arrow CTA */}
+                                <div className="card-arrow">→</div>
                             </div>
+
+                            {/* Large watermark number */}
+                            <div className="service-num-huge">{srv.num}</div>
                         </motion.div>
                     ))}
                 </div>
