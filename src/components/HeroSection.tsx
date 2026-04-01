@@ -53,10 +53,10 @@ const HeroSection = () => {
                         animate="visible"
                     >
                         <div className="title-line">
-                            <motion.span variants={wordVariants} className="inline-block">Eigenstate</motion.span>
+                            <motion.span variants={wordVariants} className="inline-block">Where Luxury</motion.span>
                         </div>
                         <div className="title-line">
-                            <motion.span variants={wordVariants} className="inline-block muted-hero-dark">Of Living.</motion.span>
+                            <motion.span variants={wordVariants} className="inline-block muted-hero-dark">Finds Home.</motion.span>
                         </div>
                     </motion.h1>
                 </div>
