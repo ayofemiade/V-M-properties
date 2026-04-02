@@ -1,7 +1,12 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const BG_IMAGE = "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2500&q=80')";
+// Serve a device-appropriate image to drastically reduce LCP time
+// Mobile: w=800 (~80kb) vs Desktop: w=2000 (~400kb) — not the raw 3MB w=2500
+const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+const BG_URL = `https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=${isMobile ? 800 : 2000}&q=80`;
+const BG_IMAGE = `url('${BG_URL}')`;
+
 
 const HeroSection = () => {
     const sectionRef = useRef<HTMLElement>(null);

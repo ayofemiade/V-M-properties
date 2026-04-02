@@ -372,7 +372,8 @@ button {
 .hero-scroll-section {
   position: relative;
   height: 300vh;
-  /* scroll distance for the 4-phase animation */
+  overflow: hidden;
+  /* Clamp any child element that bleeds horizontally */
 }
 
 /* Sticky viewport frame — stays pinned while parent scrolls */
@@ -602,7 +603,7 @@ button {
   }
 
   .hero-title-premium {
-    font-size: clamp(3.2rem, 11vw, 5rem);
+    font-size: clamp(2.8rem, 10vw, 4.5rem);
   }
 
   .hero-title-container {
@@ -622,11 +623,35 @@ button {
     width: 100%;
     justify-content: center;
   }
+
+  /* Prevent huge cutout text from overflowing horizontally on phone */
+  .hero-logo-cutout {
+    font-size: clamp(4.5rem, 22vw, 8rem);
+    letter-spacing: -0.03em;
+    width: 100%;
+    word-break: break-word;
+  }
+
+  /* Prevent wide letter-spacing from pushing out of screen */
+  .hero-logo-sub-text {
+    letter-spacing: 0.25em;
+    font-size: 1rem;
+  }
+
+  /* Tighten description text on phone */
+  .hero-logo-desc {
+    font-size: 0.9rem;
+    padding: 0 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-bottom-grid {
     gap: 1.5rem;
+  }
+
+  .hero-logo-cutout {
+    font-size: clamp(3.8rem, 18vw, 6rem);
   }
 }
 
