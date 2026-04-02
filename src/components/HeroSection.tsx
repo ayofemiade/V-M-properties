@@ -93,10 +93,10 @@ const HeroSection = () => {
                             transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
                         >
                             <div className="title-line">
-                                <span className="inline-block">Where Luxury</span>
+                                <span className="inline-block">Where Vision</span>
                             </div>
                             <div className="title-line">
-                                <span className="inline-block muted-hero-dark">Finds Home.</span>
+                                <span className="inline-block muted-hero-dark">Meets Real Estate</span>
                             </div>
                         </motion.h1>
                     </div>
@@ -108,8 +108,8 @@ const HeroSection = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
                         >
-                            <p className="hero-p-main">Expert agents. Real guidance.</p>
-                            <p className="hero-p-sub">A clear path to find what's next.</p>
+                            <p className="hero-p-main">From Vision to Reality,</p>
+                            <p className="hero-p-sub">We Develop Real Estate That Works</p>
                         </motion.div>
 
                         <motion.div
@@ -148,10 +148,10 @@ const HeroSection = () => {
                     </motion.div>
 
                     <motion.div
-                        className="hero-logo-tagline"
+                        className="hero-logo-desc"
                         style={{ opacity: subTextOpacity }}
                     >
-                        Where Luxury Finds Home
+                        V & M Property LLC is a North Carolina-based real estate company focused on residential development, investment, and strategic property solutions that create long-term value for communities and partners.
                     </motion.div>
                 </motion.div>
 

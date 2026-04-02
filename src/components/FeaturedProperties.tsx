@@ -44,7 +44,7 @@ const PropertyCard = ({ prop, idx }: { prop: any, idx: number }) => {
                     <span className="watermark-idx">0{idx + 1}</span>
                     <span className="showcase-location muted">{prop.target}</span>
                     <h3>{prop.title}</h3>
-                    <p className="showcase-desc">{prop.desc}</p>
+                    <div className="showcase-desc">{prop.desc}</div>
                     <div className="showcase-bottom">
                         <div className="showcase-price">{prop.price}</div>
                         <button className="stadium-btn-outline">View Details</button>
@@ -57,13 +57,34 @@ const PropertyCard = ({ prop, idx }: { prop: any, idx: number }) => {
 
 const FeaturedProperties = () => {
     const properties = [
-        { title: "The Beverly Estate", target: "Los Angeles, CA", price: "$24,500,000", desc: "An architectural triumph located in the exclusive Bird Streets. Walls of glass reveal unobstructed city-to-ocean views, defining the ultimate LA lifestyle.", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80" },
-        { title: "Azure Penthouse", target: "Monaco", price: "€32,000,000", desc: "Hovering above the Mediterranean, this entire-floor penthouse offers wrap-around terraces and bespoke finishes fitting for royalty.", image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80" },
-        { title: "Villa Serenade", target: "Lake Como, Italy", price: "€18,900,000", desc: "A historic 19th-century waterfront villa seamlessly restored. Private boat dock, manicured gardens, and centuries of aristocratic heritage.", image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1600&q=80" }
+        {
+            title: "The Betach Place",
+            target: "Winston-Salem, NC",
+            price: "Target: Q4 2025",
+            desc: (
+                <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                    <p style={{ lineHeight: "1.5", margin: 0, fontSize: "0.95rem" }}>
+                        Thoughtfully planned residential development featuring 23 modern homes designed for young professionals, families, and retirees.
+                    </p>
+
+                    <div style={{ padding: "1rem", background: "rgba(0,0,0,0.03)", borderRadius: "6px" }}>
+                        <strong style={{ display: "block", marginBottom: "0.4rem", color: "#111", textTransform: "uppercase", fontSize: "0.75rem", letterSpacing: "0.08em" }}>Key Features</strong>
+                        <p style={{ margin: 0, fontSize: "0.85rem", color: "#444", lineHeight: "1.5" }}>
+                            1,500 sq ft homes &bull; Energy-efficient &bull; Low-maintenance &bull; Community layout &bull; Long-term value
+                        </p>
+                    </div>
+
+                    <p style={{ fontSize: "0.9rem", color: "#555", margin: 0 }}>
+                        <strong style={{ color: "#111" }}>Status:</strong> Pre-development
+                    </p>
+                </div>
+            ),
+            image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=80"
+        }
     ];
 
     return (
-        <section className="featured-section" id="properties">
+        <section className="featured-section" id="projects">
             <div className="container">
                 <div style={{ overflow: 'hidden', marginBottom: '0.5rem' }}>
                     <motion.h2
@@ -73,10 +94,10 @@ const FeaturedProperties = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
                     >
-                        The Masterpiece <span className="muted">Collection.</span>
+                        Featured <span className="muted">Development.</span>
                     </motion.h2>
                 </div>
-                <p className="section-subtitle text-center" style={{ marginBottom: "6rem" }}>A curated selection of the world's most luxurious estates.</p>
+                <p className="section-subtitle text-center" style={{ marginBottom: "6rem" }}>Spotlight on our latest thoughtfully planned residential community.</p>
 
                 <div className="properties-showcase-list">
                     {properties.map((prop, idx) => (

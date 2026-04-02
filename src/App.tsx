@@ -3,6 +3,7 @@ import { ReactLenis } from '@studio-freight/react-lenis';
 import './index.css';
 import HeroSection from './components/HeroSection';
 import FeaturedProperties from './components/FeaturedProperties';
+import WhyChooseUs from './components/WhyChooseUs';
 import BrandStory from './components/BrandStory';
 import ServicesSection from './components/ServicesSection';
 import BeforeAfterSection from './components/BeforeAfterSection';
@@ -25,8 +26,9 @@ function App() {
 
           {/* Desktop Nav */}
           <nav className="nav desktop-nav">
-            <a href="#properties" className="nav-link">Properties</a>
             <a href="#story" className="nav-link">Our Story</a>
+            <a href="#services" className="nav-link">Services</a>
+            <a href="#projects" className="nav-link">Projects</a>
             <a href="#contact" className="nav-link">Contact</a>
           </nav>
 
@@ -52,7 +54,7 @@ function App() {
           <div className="mobile-menu-brand">V&M</div>
 
           <nav className="mobile-nav">
-            {['Properties', 'Our Story', 'Contact'].map((item, i) => (
+            {['Our Story', 'Services', 'Projects', 'Contact'].map((item, i) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '')}`}
@@ -76,6 +78,7 @@ function App() {
           <BrandStory />
           <ServicesSection />
           <FeaturedProperties />
+          <WhyChooseUs />
           <BeforeAfterSection />
           <TestimonialSection />
           <CTASection />

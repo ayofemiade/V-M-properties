@@ -3,27 +3,33 @@ import { motion } from 'framer-motion';
 const services = [
     {
         num: "01",
-        title: "Alignment",
+        title: "Residential Development",
         icon: "◈",
-        desc: "We align our vision with your ultimate lifestyle goals, mapping out exact properties that match your prestige before they ever hit the market."
+        desc: "We develop single-family and multi-family residential projects designed for durability, efficiency, and long-term value."
     },
     {
         num: "02",
-        title: "Clarity",
+        title: "Fix & Flip Investments",
         icon: "◎",
-        desc: "Transparent, discrete, and clear communication. You dictate the pace, and we orchestrate the logistics behind the scenes."
+        desc: "Strategic acquisition and renovation of undervalued properties to maximize market value and returns."
     },
     {
         num: "03",
-        title: "Execution",
+        title: "Real Estate Consulting",
         icon: "◆",
-        desc: "Seamless negotiations, flawless legal paperwork, and white-glove transition and relocation services."
+        desc: "We provide guidance on property acquisition, development feasibility, and investment strategy."
+    },
+    {
+        num: "04",
+        title: "Investment Opportunities",
+        icon: "◇",
+        desc: "We partner with investors looking to participate in structured real estate projects with clear returns."
     }
 ];
 
 const ServicesSection = () => {
     return (
-        <section className="services-section-premium">
+        <section className="services-section-premium" id="services">
             <div className="container premium-services-grid">
 
                 <div className="services-left">
@@ -34,8 +40,8 @@ const ServicesSection = () => {
                         viewport={{ once: true, margin: "0px" }}
                         transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
                     >
-                        <h2 className="premium-section-title">The <br />Method.</h2>
-                        <p className="premium-section-sub">A calculated, discrete approach to securing your legacy. We don't just find houses; we orchestrate lifestyles.</p>
+                        <h2 className="premium-section-title">Core <br />Services.</h2>
+                        <p className="premium-section-sub">A comprehensive suite of real estate solutions tailored for durability, strategic growth, and long-term value generation.</p>
                     </motion.div>
                 </div>
 
