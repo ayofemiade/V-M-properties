@@ -85,7 +85,7 @@ const FeaturedProperties = () => {
     ];
 
     return (
-        <section className="featured-section" id="projects">
+        <section className="featured-section" id="featured-projects-home">
             <div className="container">
                 <div style={{ overflow: 'hidden', marginBottom: '0.5rem' }}>
                     <motion.h2

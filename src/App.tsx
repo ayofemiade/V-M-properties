@@ -11,15 +11,31 @@ import TestimonialSection from './components/TestimonialSection';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
 import OurStory from './pages/OurStory';
+import Services from './pages/Services';
+import Projects from './pages/Projects';
 
-type Page = 'home' | 'our-story';
+type Page = 'home' | 'our-story' | 'services' | 'projects';
+
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [page, setPage] = useState<Page>('home');
 
   const closeMenu = () => setMenuOpen(false);
-  const goTo = (p: Page) => { setPage(p); closeMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+
+  const goTo = (p: Page, anchor?: string) => {
+    setPage(p);
+    closeMenu();
+
+    if (anchor) {
+      setTimeout(() => {
+        const el = document.querySelector(anchor);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   if (page === 'our-story') {
     return (
@@ -29,21 +45,39 @@ function App() {
     );
   }
 
+  if (page === 'services') {
+    return (
+      <ReactLenis root>
+        <Services onBack={() => goTo('home')} />
+      </ReactLenis>
+    );
+  }
+
+  if (page === 'projects') {
+    return (
+      <ReactLenis root>
+        <Projects onBack={() => goTo('home')} />
+      </ReactLenis>
+    );
+  }
+
+
   return (
     <ReactLenis root>
       <div className="app-container">
         <header className="header">
-          <a href="#" className="logo-img-link" onClick={() => goTo('home')}>
+          <button className="logo-img-link-btn" onClick={() => goTo('home')}>
             <img src="/logo.png" alt="V&M Properties" className="nav-logo-img" />
-          </a>
+          </button>
 
           {/* Desktop Nav */}
           <nav className="nav desktop-nav">
             <button className="nav-link nav-link-btn" onClick={() => goTo('our-story')}>Our Story</button>
-            <a href="#services" className="nav-link">Services</a>
-            <a href="#projects" className="nav-link">Projects</a>
-            <a href="#contact" className="nav-link">Contact</a>
+            <button className="nav-link nav-link-btn" onClick={() => goTo('services')}>Services</button>
+            <button className="nav-link nav-link-btn" onClick={() => goTo('projects')}>Projects</button>
+            <button className="nav-link nav-link-btn" onClick={() => goTo('home', '#contact')}>Contact</button>
           </nav>
+
 
           {/* Hamburger Button — mobile only */}
           <button
@@ -68,25 +102,41 @@ function App() {
 
           <nav className="mobile-nav">
             <button
-              className="mobile-nav-link"
+              className="mobile-nav-link-btn"
               onClick={() => goTo('our-story')}
-              style={{ transitionDelay: menuOpen ? '0.1s' : '0s', background: 'none', border: 'none', textAlign: 'left', width: '100%', cursor: 'pointer', fontFamily: 'var(--font-body)' }}
+              style={{ transitionDelay: menuOpen ? '0.1s' : '0s' }}
             >
               <span className="mobile-nav-num">01</span>
               Our Story
             </button>
-            {[['Services', '#services'], ['Projects', '#projects'], ['Contact', '#contact']].map(([item, href], i) => (
-              <a
-                key={item}
-                href={href}
-                className="mobile-nav-link"
-                onClick={closeMenu}
-                style={{ transitionDelay: menuOpen ? `${(i + 1) * 0.08 + 0.1}s` : '0s' }}
-              >
-                <span className="mobile-nav-num">0{i + 2}</span>
-                {item}
-              </a>
-            ))}
+
+            <button
+              className="mobile-nav-link-btn"
+              onClick={() => goTo('services')}
+              style={{ transitionDelay: menuOpen ? '0.18s' : '0s' }}
+            >
+              <span className="mobile-nav-num">02</span>
+              Services
+            </button>
+
+            <button
+              className="mobile-nav-link-btn"
+              onClick={() => goTo('projects')}
+              style={{ transitionDelay: menuOpen ? '0.26s' : '0s' }}
+            >
+              <span className="mobile-nav-num">03</span>
+              Projects
+            </button>
+
+            <button
+              className="mobile-nav-link-btn"
+              onClick={() => goTo('home', '#contact')}
+              style={{ transitionDelay: menuOpen ? '0.34s' : '0s' }}
+            >
+              <span className="mobile-nav-num">04</span>
+              Contact
+            </button>
+
           </nav>
 
           <div className="mobile-menu-footer">
@@ -96,8 +146,8 @@ function App() {
 
         <main>
           <HeroSection />
-          <BrandStory />
-          <ServicesSection />
+          <BrandStory onNavigate={goTo} />
+          <ServicesSection onNavigate={goTo} />
           <FeaturedProperties />
           <WhyChooseUs />
           <BeforeAfterSection />
@@ -105,11 +155,10 @@ function App() {
           <CTASection />
         </main>
 
-        <Footer />
+        <Footer onNavigate={goTo} />
       </div>
     </ReactLenis>
   );
 }
 
 export default App;
-

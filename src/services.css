@@ -1,0 +1,436 @@
+/* ══════════════════════════════════════════════
+   SERVICES PAGE
+══════════════════════════════════════════════ */
+
+.services-page {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    min-height: 100vh;
+}
+
+/* ── HERO ── */
+.sv-hero {
+    position: relative;
+    height: 90vh;
+    /* Slightly shorter than full height for immediate entry to overview */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0A0A0A;
+}
+
+.sv-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+}
+
+.sv-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.2) 0%, rgba(10, 10, 10, 0.7) 70%, #0A0A0A 100%);
+}
+
+.sv-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.sv-eyebrow {
+    display: block;
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #C6A87D;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.sv-hero-title {
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+}
+
+.sv-hero-sub {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.sv-scroll-cue {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-size: 1.5rem;
+    color: rgba(198, 168, 125, 0.5);
+}
+
+/* ── OVERVIEW ── */
+.sv-overview {
+    padding: 10rem 0;
+    background: #0A0A0A;
+}
+
+.sv-overview-inner {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sv-overview-text {
+    font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+    font-weight: 300;
+    line-height: 1.45;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin: 2.5rem 0 3.5rem;
+    padding: 0 5%;
+}
+
+.sv-overview-bar {
+    width: 60px;
+    height: 1px;
+    background: #C6A87D;
+    margin: 0 auto;
+}
+
+/* ── SERVICE BLOCKS ── */
+.sv-services {
+    background: #ffffff;
+    padding: 4rem 0;
+}
+
+.sv-services-inner {
+    width: 100%;
+}
+
+.sv-block {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    min-height: 100vh;
+    align-items: center;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.sv-block-flip {
+    grid-template-columns: 0.85fr 1.15fr;
+}
+
+.sv-block-img-wrap {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.sv-block-img-inner {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.sv-block-img-inner img {
+    height: 112%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sv-block-num-badge {
+    position: absolute;
+    bottom: 3rem;
+    left: 4rem;
+    font-size: clamp(6rem, 15vw, 12rem);
+    font-weight: 800;
+    line-height: 0.8;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sv-block-flip .sv-block-num-badge {
+    left: auto;
+    right: 4rem;
+}
+
+.sv-block-text {
+    padding: 8rem 10% 8rem 10%;
+    color: #0A0A0A;
+}
+
+.sv-block-flip .sv-block-text {
+    order: -1;
+    text-align: right;
+}
+
+.sv-block-title {
+    font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin: 1.5rem 0 2.5rem;
+    color: #0A0A0A;
+}
+
+.sv-block-desc {
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: #444;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    max-width: 520px;
+}
+
+.sv-block-flip .sv-block-desc {
+    margin-left: auto;
+}
+
+.sv-detail-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.sv-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #0A0A0A;
+}
+
+.sv-block-flip .sv-detail-item {
+    flex-direction: row-reverse;
+}
+
+.sv-detail-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #C6A87D;
+    border-radius: 50%;
+}
+
+/* ── TRUST PILLARS ── */
+.sv-trust {
+    padding: 10rem 0;
+    background: #ffffff;
+}
+
+.sv-trust-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    color: #0A0A0A;
+    text-align: center;
+    margin: 1rem 0 5rem;
+}
+
+.sv-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.sv-pillar-card {
+    border: 1px solid #eeeeee;
+    padding: 3rem 2rem;
+    border-radius: 2px;
+    background: #ffffff;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sv-pillar-icon {
+    display: block;
+    font-size: 1.6rem;
+    color: #C6A87D;
+    margin-bottom: 1.5rem;
+}
+
+.sv-pillar-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0A0A0A;
+    letter-spacing: -0.01em;
+}
+
+.sv-pillar-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
+    font-weight: 300;
+}
+
+/* ── CTA ── */
+.sv-cta {
+    padding: 12rem 0;
+    background: #0A0A0A;
+    position: relative;
+    overflow: hidden;
+}
+
+.sv-cta-inner {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.sv-cta-title {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 2.5rem;
+    color: #ffffff;
+}
+
+.sv-cta-muted {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.sv-cta-sub {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.sv-cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.sv-cta-btn-primary {
+    background-color: #C6A87D;
+    color: #0A0A0A;
+    padding: 1.2rem 3rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.sv-cta-btn-primary:hover {
+    background-color: #d1b893;
+    transform: translateY(-3px);
+}
+
+.sv-cta-btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 1.2rem 3rem;
+    border-radius: 4px;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.sv-cta-btn-secondary:hover {
+    border-color: #C6A87D;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+    .sv-block {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .sv-block-flip {
+        grid-template-columns: 1fr;
+    }
+
+    .sv-block-img-wrap {
+        height: 60vh;
+    }
+
+    .sv-block-text {
+        padding: 5rem 10%;
+    }
+
+    .sv-block-flip .sv-block-text {
+        order: 0;
+        text-align: left;
+    }
+
+    .sv-block-flip .sv-block-desc {
+        margin-left: 0;
+    }
+
+    .sv-block-flip .sv-detail-item {
+        flex-direction: row;
+    }
+
+    .sv-block-flip .sv-block-num-badge {
+        right: auto;
+        left: 4rem;
+    }
+
+    .sv-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sv-overview {
+        padding: 6rem 0;
+    }
+
+    .sv-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sv-hero-title {
+        font-size: 3.5rem;
+    }
+
+    .sv-cta-title {
+        font-size: 3rem;
+    }
+
+    .sv-block-num-badge {
+        left: 2rem;
+        bottom: 2rem;
+    }
+}
+
+/* Gold label utility */
+.sv-gold-label {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #C6A87D;
+    font-weight: 600;
+}
+
+.sv-gold-label.centered {
+    text-align: center;
+}

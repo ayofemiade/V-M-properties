@@ -27,9 +27,13 @@ const services = [
     }
 ];
 
-const ServicesSection = () => {
+interface ServicesSectionProps {
+    onNavigate?: (page: 'home' | 'our-story' | 'services', anchor?: string) => void;
+}
+
+const ServicesSection = ({ onNavigate }: ServicesSectionProps) => {
     return (
-        <section className="services-section-premium" id="services">
+        <section className="services-section-premium" id="services-section-home">
             <div className="container premium-services-grid">
 
                 <div className="services-left">
@@ -42,6 +46,15 @@ const ServicesSection = () => {
                     >
                         <h2 className="premium-section-title">Core <br />Services.</h2>
                         <p className="premium-section-sub">A comprehensive suite of real estate solutions tailored for durability, strategic growth, and long-term value generation.</p>
+
+                        <motion.button
+                            className="stadium-btn-outline mt-8"
+                            onClick={() => onNavigate?.('services')}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            Explore Our Capabilities &rarr;
+                        </motion.button>
                     </motion.div>
                 </div>
 
@@ -54,6 +67,8 @@ const ServicesSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "0px" }}
                             transition={{ duration: 0.9, delay: idx * 0.12, ease: [0.25, 1, 0.5, 1] }}
+                            onClick={() => onNavigate?.('services')}
+                            style={{ cursor: 'pointer' }}
                         >
                             {/* Gold accent top bar */}
                             <div className="card-gold-bar"></div>
@@ -84,3 +99,4 @@ const ServicesSection = () => {
 };
 
 export default ServicesSection;
+

@@ -1,7 +1,11 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const BrandStory = () => {
+interface BrandStoryProps {
+    onNavigate?: (page: 'home' | 'our-story' | 'services', anchor?: string) => void;
+}
+
+const BrandStory = ({ onNavigate }: BrandStoryProps) => {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -63,7 +67,12 @@ const BrandStory = () => {
                                 Our properties are hand-selected masterpieces, offering unparalleled privacy, exceptional design, and world-class amenities. This is where legacy is forged.
                             </p>
 
-                            <button className="stadium-btn-outline mt-8">Read the Manifesto &rarr;</button>
+                            <button
+                                className="stadium-btn-outline mt-8"
+                                onClick={() => onNavigate?.('our-story')}
+                            >
+                                Read the Manifesto &rarr;
+                            </button>
                         </motion.div>
                     </div>
 
@@ -74,3 +83,4 @@ const BrandStory = () => {
 };
 
 export default BrandStory;
+
