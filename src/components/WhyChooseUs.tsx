@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const reasons = [
@@ -36,6 +36,14 @@ const reasons = [
 
 const WhyChooseUs = () => {
     const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
+    // Preload all high-res Unsplash images silently in the background
+    useEffect(() => {
+        reasons.forEach((reason) => {
+            const img = new Image();
+            img.src = reason.bgImage;
+        });
+    }, []);
 
     return (
         <section className="why-interactive-section">

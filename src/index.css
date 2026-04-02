@@ -1347,13 +1347,14 @@ button {
     /* Hide the huge horizontal arrow on mobile entirely to save space */
   }
 
-  /* On mobile, hover doesn't exist, so display backgrounds persistently but softly */
+  /* On mobile, hover doesn't exist, so display backgrounds persistently */
   .why-row-bg {
-    opacity: 0.15;
+    opacity: 1;
   }
 
-  .why-row-premium.hovered .why-row-bg {
-    opacity: 0.3;
+  .why-row-overlay {
+    background: rgba(0, 0, 0, 0.75);
+    /* Dark enough overlay so white text is highly readable */
   }
 }
 
