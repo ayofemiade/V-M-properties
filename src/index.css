@@ -182,6 +182,34 @@ button {
   width: 100%;
 }
 
+/* Nav button — same look as nav-link anchor */
+.nav-link-btn {
+  background: none;
+  border: none;
+  padding-bottom: 4px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-link-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: #fff;
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-link-btn:hover::after {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .header {
     padding: 1.5rem 5%;
@@ -372,8 +400,10 @@ button {
 .hero-scroll-section {
   position: relative;
   height: 300vh;
-  overflow: hidden;
-  /* Clamp any child element that bleeds horizontally */
+  /* Use overflow-x:clip NOT overflow:hidden.
+     overflow:hidden breaks position:sticky on children by creating a scroll container.
+     overflow-x:clip visually clips horizontal bleed WITHOUT creating a scroll container */
+  overflow-x: clip;
 }
 
 /* Sticky viewport frame — stays pinned while parent scrolls */

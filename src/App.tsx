@@ -10,23 +10,36 @@ import BeforeAfterSection from './components/BeforeAfterSection';
 import TestimonialSection from './components/TestimonialSection';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
+import OurStory from './pages/OurStory';
+
+type Page = 'home' | 'our-story';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [page, setPage] = useState<Page>('home');
 
   const closeMenu = () => setMenuOpen(false);
+  const goTo = (p: Page) => { setPage(p); closeMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+
+  if (page === 'our-story') {
+    return (
+      <ReactLenis root>
+        <OurStory onBack={() => goTo('home')} />
+      </ReactLenis>
+    );
+  }
 
   return (
     <ReactLenis root>
       <div className="app-container">
         <header className="header">
-          <a href="#" className="logo-img-link">
+          <a href="#" className="logo-img-link" onClick={() => goTo('home')}>
             <img src="/logo.png" alt="V&M Properties" className="nav-logo-img" />
           </a>
 
           {/* Desktop Nav */}
           <nav className="nav desktop-nav">
-            <a href="#story" className="nav-link">Our Story</a>
+            <button className="nav-link nav-link-btn" onClick={() => goTo('our-story')}>Our Story</button>
             <a href="#services" className="nav-link">Services</a>
             <a href="#projects" className="nav-link">Projects</a>
             <a href="#contact" className="nav-link">Contact</a>
@@ -54,22 +67,30 @@ function App() {
           <div className="mobile-menu-brand">V&M</div>
 
           <nav className="mobile-nav">
-            {['Our Story', 'Services', 'Projects', 'Contact'].map((item, i) => (
+            <button
+              className="mobile-nav-link"
+              onClick={() => goTo('our-story')}
+              style={{ transitionDelay: menuOpen ? '0.1s' : '0s', background: 'none', border: 'none', textAlign: 'left', width: '100%', cursor: 'pointer', fontFamily: 'var(--font-body)' }}
+            >
+              <span className="mobile-nav-num">01</span>
+              Our Story
+            </button>
+            {[['Services', '#services'], ['Projects', '#projects'], ['Contact', '#contact']].map(([item, href], i) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase().replace(' ', '')}`}
+                href={href}
                 className="mobile-nav-link"
                 onClick={closeMenu}
-                style={{ transitionDelay: menuOpen ? `${i * 0.08 + 0.1}s` : '0s' }}
+                style={{ transitionDelay: menuOpen ? `${(i + 1) * 0.08 + 0.1}s` : '0s' }}
               >
-                <span className="mobile-nav-num">0{i + 1}</span>
+                <span className="mobile-nav-num">0{i + 2}</span>
                 {item}
               </a>
             ))}
           </nav>
 
           <div className="mobile-menu-footer">
-            <p>V&M Properties © 2025</p>
+            <p>V&M Properties © 2026</p>
           </div>
         </div>
 
@@ -91,3 +112,4 @@ function App() {
 }
 
 export default App;
+
