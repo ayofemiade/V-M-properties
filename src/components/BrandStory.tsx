@@ -43,6 +43,7 @@ const BrandStory = () => {
                             whileInView={{ scale: 1.05 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1.5, ease: "easeOut" }}
+                            loading="lazy"
                         />
                     </motion.div>
 

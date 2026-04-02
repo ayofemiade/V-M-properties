@@ -80,7 +80,7 @@ const TestimonialSection = () => {
 
                             <div className="testimonial-author">
                                 <div className="author-image">
-                                    <img src={testimonials[current].image} alt={testimonials[current].name} />
+                                    <img src={testimonials[current].image} alt={testimonials[current].name} loading="lazy" />
                                 </div>
                                 <div className="author-details">
                                     <h4>{testimonials[current].name}</h4>

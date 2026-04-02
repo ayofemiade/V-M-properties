@@ -50,8 +50,9 @@ const BeforeAfterSection = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
                 >
-                    <h2 className="ba-title">Transformation That <span className="muted">Speaks for Itself.</span></h2>
-                    <p className="ba-subtitle">See how we turn properties into premium investments.</p>
+                    <span className="concept-preview-label">Concept Preview</span>
+                    <h2 className="ba-title">A Glimpse Into <br /><span className="muted">What We’re Building.</span></h2>
+                    <p className="ba-subtitle">Explore how our developments evolve from raw potential into premium living experiences.</p>
                 </motion.div>
 
                 <motion.div
@@ -64,19 +65,35 @@ const BeforeAfterSection = () => {
                     onMouseDown={(e: any) => { setIsDragging(true); handleMove(e.clientX); }}
                     onTouchStart={(e: any) => { setIsDragging(true); handleMove(e.touches[0].clientX); }}
                 >
-                    {/* After Image (Background) */}
+                    {/* After Image (Background - High-end Render) */}
                     <div className="ba-image ba-after">
-                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80" alt="After Renovation" draggable="false" />
-                        <div className="ba-label ba-label-after">AFTER</div>
+                        <motion.img
+                            initial={{ scale: 1.05 }}
+                            whileInView={{ scale: 1 }}
+                            transition={{ duration: 1.8, ease: "easeOut" }}
+                            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80"
+                            alt="Proposed Development"
+                            draggable="false"
+                            loading="lazy"
+                        />
+                        <div className="ba-label ba-label-after">Proposed Development</div>
                     </div>
 
-                    {/* Before Image (Overlay clipped) */}
+                    {/* Before Image (Overlay clipped - Raw Structure) */}
                     <div
                         className="ba-image ba-before"
                         style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
                     >
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80" alt="Before Renovation" draggable="false" />
-                        <div className="ba-label ba-label-before">BEFORE</div>
+                        <motion.img
+                            initial={{ scale: 1.05 }}
+                            whileInView={{ scale: 1 }}
+                            transition={{ duration: 1.8, ease: "easeOut" }}
+                            src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=1600&q=80"
+                            alt="Current State"
+                            draggable="false"
+                            loading="lazy"
+                        />
+                        <div className="ba-label ba-label-before">Current State</div>
                     </div>
 
                     {/* Slider Handle */}
@@ -99,8 +116,8 @@ const BeforeAfterSection = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: 0.8 }}
                 >
-                    <strong>The Hollywood Hills Estate</strong>
-                    <span>Full-Scale Modernization &middot; Value Increased by 150%</span>
+                    <strong>Project In Development</strong>
+                    <span>Phase 1 Construction &middot; Q4 2026 Target Completion</span>
                 </motion.div>
 
             </div>

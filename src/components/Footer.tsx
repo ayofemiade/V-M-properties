@@ -6,7 +6,7 @@ const Footer = () => {
 
                 {/* Column 1: Brand & Contact */}
                 <div className="footer-col-brand">
-                    <h2 className="footer-logo">V&M Property LLC.</h2>
+                    <img src="/logo.png" alt="V&M Property LLC Logo" className="footer-logo-img" />
                     <p className="footer-vision">From Vision to Reality, We Develop Real Estate That Works.</p>
 
                     <div className="footer-direct-contact">

@@ -30,6 +30,7 @@ const PropertyCard = ({ prop, idx }: { prop: any, idx: number }) => {
                     src={prop.image}
                     alt={prop.title}
                     style={{ y: imageY }}
+                    loading="lazy"
                 />
             </motion.div>
 
