@@ -7,6 +7,32 @@
     color: #0A0A0A;
 }
 
+.story-back-btn {
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
+    z-index: 100;
+    background: #0A0A0A;
+    border: none;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.story-back-btn:hover {
+    background: #C6A87D;
+    color: #000;
+    transform: translateX(-8px);
+}
+
+
+
 /* ── HERO ── */
 .ct-hero {
     position: relative;
@@ -98,16 +124,17 @@
 
 /* ── MAIN CONTENT (FORM & INFO Split) ── */
 .ct-main-content {
-    padding: 6rem 0 10rem;
+    padding: 10rem 0 12rem;
     background: #ffffff;
 }
 
 .ct-split-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
     gap: 8rem;
     align-items: flex-start;
 }
+
 
 /* Form Styles */
 .ct-form-premium {
@@ -117,8 +144,8 @@
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 3rem;
+    margin-bottom: 4rem;
 }
 
 .form-group {
@@ -127,16 +154,22 @@
 }
 
 .form-group.full-width {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .form-group label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-weight: 600;
-    color: #0A0A0A;
-    margin-bottom: 1rem;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+
+.form-group:focus-within label {
+    color: #C6A87D;
 }
 
 .form-group input,
@@ -144,94 +177,118 @@
 .form-group select {
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0.8rem 0;
     font-family: inherit;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #000;
+    font-weight: 400;
     outline: none;
-    transition: border-color 0.4s ease;
+    transition: all 0.4s ease;
 }
+
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 400;
 }
+
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-color: #C6A87D;
+    border-color: #000;
 }
 
 .massive-btn {
     width: 100%;
-    padding: 1.5rem;
-    font-size: 1.1rem;
+    padding: 1.8rem;
+    font-size: 1rem;
     background: #0A0A0A;
     color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
     justify-content: center;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .massive-btn:hover {
     background: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Info Side Styles */
+.ct-info-side {
+    background: #F7F7F7;
+    padding: 5rem;
+    border-radius: 4px;
+    border: 1px solid #f0f0f0;
+}
+
+
 .ct-info-sticky {
     position: sticky;
     top: 10rem;
 }
 
+
 .ct-info-block {
-    margin-top: 3.5rem;
+    margin-top: 4.5rem;
 }
 
 .ct-info-label {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #999;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: #C6A87D;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
 }
 
 .ct-info-val {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
     color: #0A0A0A;
     text-decoration: none;
-    font-weight: 300;
+    font-weight: 400;
+    line-height: 1.4;
     transition: color 0.3s ease;
     display: block;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
+
 
 .ct-info-val:hover {
     color: #C6A87D;
 }
 
 .ct-info-val.grey {
-    color: #555;
+    color: #888;
     pointer-events: none;
 }
 
 .ct-social-invite {
-    margin-top: 6rem;
+    margin-top: 8rem;
     max-width: 320px;
 }
 
 .ct-social-invite .accent-line {
-    width: 40px;
-    height: 1px;
-    background: #C6A87D;
-    margin-bottom: 2rem;
+    width: 30px;
+    height: 1.5px;
+    background: #000;
+    margin-bottom: 2.5rem;
 }
 
 .ct-social-invite p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.8;
-    color: #666;
-    font-style: italic;
+    color: #777;
+    font-weight: 300;
 }
+
 
 /* Success Card */
 .ct-success-card {
@@ -278,23 +335,49 @@
 
 /* ── FINAL CTA ── */
 .ct-final-cta {
-    padding: 12rem 0;
+    padding: 15rem 0;
     background: #ffffff;
+    text-align: center;
 }
 
 .ct-cta-title {
-    font-size: clamp(3rem, 6vw, 6.5rem);
-    font-weight: 300;
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-    margin-bottom: 1.5rem;
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 0.85;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.ct-cta-title .muted {
+    display: block;
+    color: #999;
 }
 
 .ct-cta-sub {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 1.3rem;
+    color: #555;
     letter-spacing: 0.05em;
+    font-weight: 300;
+    margin-bottom: 5rem;
 }
+
+.ct-final-cta .premium-btn {
+    display: inline-flex;
+    margin: 0 auto;
+    padding: 1.5rem 4rem;
+    font-size: 1.1rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+}
+
+.ct-final-cta .premium-btn:hover {
+    background: #C6A87D;
+    color: #000;
+}
+
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
