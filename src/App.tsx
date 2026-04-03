@@ -13,8 +13,10 @@ import Footer from './components/Footer';
 import OurStory from './pages/OurStory';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 
-type Page = 'home' | 'our-story' | 'services' | 'projects';
+type Page = 'home' | 'our-story' | 'services' | 'projects' | 'contact';
+
 
 
 function App() {
@@ -61,6 +63,15 @@ function App() {
     );
   }
 
+  if (page === 'contact') {
+    return (
+      <ReactLenis root>
+        <Contact onBack={() => goTo('home')} />
+      </ReactLenis>
+    );
+  }
+
+
 
   return (
     <ReactLenis root>
@@ -75,8 +86,9 @@ function App() {
             <button className="nav-link nav-link-btn" onClick={() => goTo('our-story')}>Our Story</button>
             <button className="nav-link nav-link-btn" onClick={() => goTo('services')}>Services</button>
             <button className="nav-link nav-link-btn" onClick={() => goTo('projects')}>Projects</button>
-            <button className="nav-link nav-link-btn" onClick={() => goTo('home', '#contact')}>Contact</button>
+            <button className="nav-link nav-link-btn" onClick={() => goTo('contact')}>Contact</button>
           </nav>
+
 
 
           {/* Hamburger Button — mobile only */}
@@ -130,12 +142,13 @@ function App() {
 
             <button
               className="mobile-nav-link-btn"
-              onClick={() => goTo('home', '#contact')}
+              onClick={() => goTo('contact')}
               style={{ transitionDelay: menuOpen ? '0.34s' : '0s' }}
             >
               <span className="mobile-nav-num">04</span>
               Contact
             </button>
+
 
           </nav>
 
@@ -152,8 +165,9 @@ function App() {
           <WhyChooseUs />
           <BeforeAfterSection />
           <TestimonialSection />
-          <CTASection />
+          <CTASection onNavigate={goTo} />
         </main>
+
 
         <Footer onNavigate={goTo} />
       </div>

@@ -1,0 +1,331 @@
+/* ══════════════════════════════════════════════
+   CONTACT PAGE
+══════════════════════════════════════════════ */
+
+.contact-page {
+    background-color: #ffffff;
+    color: #0A0A0A;
+}
+
+/* ── HERO ── */
+.ct-hero {
+    position: relative;
+    padding: 6rem 0 4rem;
+    background-color: #0A0A0A;
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.ct-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+}
+
+.ct-hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(198, 168, 125, 0.05) 0%, rgba(10, 10, 10, 0.4) 70%, #0A0A0A 100%);
+}
+
+
+.ct-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 5%;
+}
+
+.ct-hero-eyebrow {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-weight: 600;
+    color: #C6A87D;
+    margin-bottom: 2.5rem;
+}
+
+.ct-hero-title {
+    font-size: clamp(4.5rem, 12vw, 10rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 0.82;
+    margin-bottom: 4rem;
+    color: #ffffff;
+    text-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    word-spacing: 0.1em;
+}
+
+.gold-text {
+    color: #C6A87D;
+}
+
+.ct-hero-sub {
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+}
+
+
+
+/* ── INTRO ── */
+.ct-intro {
+    padding: 5rem 0;
+    background: #ffffff;
+    text-align: center;
+}
+
+.ct-intro-text {
+    font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.45;
+    color: #0A0A0A;
+    letter-spacing: -0.01em;
+}
+
+/* ── MAIN CONTENT (FORM & INFO Split) ── */
+.ct-main-content {
+    padding: 6rem 0 10rem;
+    background: #ffffff;
+}
+
+.ct-split-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 8rem;
+    align-items: flex-start;
+}
+
+/* Form Styles */
+.ct-form-premium {
+    width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    color: #0A0A0A;
+    margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    font-family: inherit;
+    font-size: 1.1rem;
+    color: #000;
+    outline: none;
+    transition: border-color 0.4s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #C6A87D;
+}
+
+.massive-btn {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    background: #0A0A0A;
+    color: #ffffff;
+    justify-content: center;
+}
+
+.massive-btn:hover {
+    background: #1a1a1a;
+}
+
+/* Info Side Styles */
+.ct-info-sticky {
+    position: sticky;
+    top: 10rem;
+}
+
+.ct-info-block {
+    margin-top: 3.5rem;
+}
+
+.ct-info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #999;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.ct-info-val {
+    font-size: 1.5rem;
+    color: #0A0A0A;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.ct-info-val:hover {
+    color: #C6A87D;
+}
+
+.ct-info-val.grey {
+    color: #555;
+    pointer-events: none;
+}
+
+.ct-social-invite {
+    margin-top: 6rem;
+    max-width: 320px;
+}
+
+.ct-social-invite .accent-line {
+    width: 40px;
+    height: 1px;
+    background: #C6A87D;
+    margin-bottom: 2rem;
+}
+
+.ct-social-invite p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #666;
+    font-style: italic;
+}
+
+/* Success Card */
+.ct-success-card {
+    padding: 6rem 4rem;
+    background: #F9F9F9;
+    border: 1px solid #eeeeee;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 3rem;
+    color: #C6A87D;
+    margin-bottom: 2.5rem;
+}
+
+.ct-success-card h3 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.ct-success-card p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+/* ── TRUST ── */
+.ct-trust {
+    padding: 10rem 0;
+    background: #0A0A0A;
+    color: #ffffff;
+    text-align: center;
+}
+
+.ct-trust-text {
+    font-size: clamp(1.4rem, 4vw, 2.8rem);
+    font-weight: 200;
+    line-height: 1.4;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* ── FINAL CTA ── */
+.ct-final-cta {
+    padding: 12rem 0;
+    background: #ffffff;
+}
+
+.ct-cta-title {
+    font-size: clamp(3rem, 6vw, 6.5rem);
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+}
+
+.ct-cta-sub {
+    font-size: 1.2rem;
+    color: #666;
+    letter-spacing: 0.05em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+    .ct-split-grid {
+        grid-template-columns: 1fr;
+        gap: 6rem;
+    }
+
+    .ct-info-sticky {
+        position: relative;
+        top: 0;
+    }
+
+    .ct-info-side {
+        border-top: 1px solid #eeeeee;
+        padding-top: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ct-hero {
+        padding: 6rem 0 3rem;
+        min-height: 50vh;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ct-info-val {
+        font-size: 1.25rem;
+    }
+}

@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
 
-const CTASection = () => {
+interface CTASectionProps {
+    onNavigate?: (page: 'home' | 'our-story' | 'services' | 'projects' | 'contact', anchor?: string) => void;
+}
+
+const CTASection = ({ onNavigate }: CTASectionProps) => {
     return (
-        <section className="cta-premium" id="contact">
+        <section className="cta-premium" id="contact-section-home">
             <div className="cta-watermark">V&M</div>
             <div className="container cta-content-premium">
                 <motion.div
@@ -23,7 +27,7 @@ const CTASection = () => {
                         transition={{ duration: 1, delay: 0.5 }}
                         className="cta-btn-wrapper"
                     >
-                        <button className="stadium-btn massive-btn hover-sweep">
+                        <button className="stadium-btn massive-btn hover-sweep" onClick={() => onNavigate?.('contact')}>
                             Start The Conversation &rarr;
                         </button>
                     </motion.div>

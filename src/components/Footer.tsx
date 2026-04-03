@@ -1,15 +1,16 @@
 
 interface FooterProps {
-    onNavigate?: (page: 'home' | 'our-story' | 'services' | 'projects', anchor?: string) => void;
+    onNavigate?: (page: 'home' | 'our-story' | 'services' | 'projects' | 'contact', anchor?: string) => void;
 }
 
 const Footer = ({ onNavigate }: FooterProps) => {
-    const handleNav = (e: React.MouseEvent, page: 'home' | 'our-story' | 'services' | 'projects', anchor?: string) => {
+    const handleNav = (e: React.MouseEvent, page: 'home' | 'our-story' | 'services' | 'projects' | 'contact', anchor?: string) => {
         if (onNavigate) {
             e.preventDefault();
             onNavigate(page, anchor);
         }
     };
+
 
     return (
         <footer className="footer-section">
@@ -32,17 +33,19 @@ const Footer = ({ onNavigate }: FooterProps) => {
                     <a href="#story" onClick={(e) => handleNav(e, 'our-story')}>Our Story</a>
                     <a href="#services" onClick={(e) => handleNav(e, 'services')}>Services</a>
                     <a href="#projects" onClick={(e) => handleNav(e, 'projects')}>Projects</a>
-                    <a href="#contact" onClick={(e) => handleNav(e, 'home', '#contact')}>Contact</a>
+                    <a href="#contact" onClick={(e) => handleNav(e, 'contact')}>Contact</a>
                 </div>
+
 
                 {/* Column 3: Call to Actions */}
                 <div className="footer-col-links">
                     <p className="footer-heading">Inquiries</p>
-                    <a href="#partner" onClick={(e) => handleNav(e, 'home', '#contact')}>Partner With Us</a>
+                    <a href="#partner" onClick={(e) => handleNav(e, 'contact')}>Partner With Us</a>
                     <a href="#invest" onClick={(e) => handleNav(e, 'services')}>Explore Investment Opportunities</a>
-                    <a href="#conversation" onClick={(e) => handleNav(e, 'home', '#contact')}>Start a Conversation</a>
-                    <a href="#discuss" onClick={(e) => handleNav(e, 'home', '#contact')}>Discuss Your Property</a>
+                    <a href="#conversation" onClick={(e) => handleNav(e, 'contact')}>Start a Conversation</a>
+                    <a href="#discuss" onClick={(e) => handleNav(e, 'contact')}>Discuss Your Property</a>
                 </div>
+
 
             </div>
 
