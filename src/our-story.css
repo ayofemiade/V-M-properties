@@ -2,31 +2,6 @@
    OUR STORY PAGE
 ══════════════════════════════════════════════ */
 
-.story-back-btn {
-    position: fixed;
-    top: 2rem;
-    left: 5%;
-    z-index: 200;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(12px);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0.65rem 1.4rem;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: background 0.3s ease, transform 0.3s ease;
-    font-family: var(--font-body);
-}
-
-.story-back-btn:hover {
-    background: rgba(0, 0, 0, 0.95);
-    transform: translateX(-4px);
-}
-
 /* ── HERO ── */
 .os-hero {
     position: relative;
@@ -572,13 +547,6 @@
 }
 
 @media (max-width: 768px) {
-    .story-back-btn {
-        top: 1rem;
-        left: 1rem;
-        padding: 0.6rem 1.2rem;
-        font-size: 0.8rem;
-    }
-
     .os-mission {
         padding-top: 10rem;
     }

@@ -130,29 +130,102 @@
 
 /* ── OVERVIEW ── */
 .pj-overview {
-    background: #ffffff;
-    padding: 6rem 0 10rem;
-    text-align: center;
+    background: #F9F9F7; /* Differentiation shift */
+    padding: 15rem 5% 14rem; /* More vertical breathing room for elite framing */
+    overflow: hidden;
+    position: relative;
 }
 
-.minimal-container {
-    max-width: 800px;
+.pj-vision-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 8%;
+    align-items: start;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 5%;
 }
 
-.pj-overview-text {
-    font-size: clamp(1.4rem, 4vw, 2.8rem);
+.pj-vision-eyebrow-col {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.8rem;
+}
+
+.pj-vision-line {
+    width: 2px;
+    height: 120px;
+    background: linear-gradient(180deg, #C6A87D 0%, transparent 100%);
+    margin-top: 2rem;
+}
+
+.pj-vision-content {
+    max-width: 900px; /* Constrain for readable line length on ultra-wide screens */
+}
+
+.pj-vision-lead {
+    font-size: clamp(1.8rem, 4.5vw, 2.75rem); /* More sophisticated size c.f. 4.4rem */
     font-weight: 300;
-    line-height: 1.4;
+    line-height: 1.35; /* Airier experience */
     color: #0A0A0A;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    margin-bottom: 4.5rem;
+}
+
+.pj-vision-body-wrap {
+    position: relative;
+}
+
+.pj-vision-body {
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    line-height: 1.85;
+    color: #444;
+    font-weight: 300;
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.pj-vision-watermark {
+    position: absolute;
+    bottom: -6rem;
+    right: 0;
+    font-size: clamp(10rem, 25vw, 18rem);
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.012); /* Extremely subtle ghost watermark */
+    pointer-events: none;
+    z-index: 1;
+    line-height: 1;
+    user-select: none;
+}
+
+@media (max-width: 1024px) {
+    .pj-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .pj-vision-line {
+        display: none;
+    }
+    
+    .pj-vision-eyebrow-col {
+        padding-top: 0;
+    }
+
+    .pj-vision-watermark {
+        font-size: 12rem;
+        bottom: -4rem;
+    }
 }
 
 /* ── KEY FEATURES grid ── */
 .pj-features {
     padding: 10rem 0;
     background: #0A0A0A;
+}
+
+.pj-features-header {
+    margin-bottom: 6rem;
 }
 
 .pj-features-grid {

@@ -120,16 +120,32 @@ const Projects = ({ onBack }: { onBack: () => void }) => {
                 SECTION 3 — PROJECT OVERVIEW
             ════════════════════════════════════════ */}
             <section className="pj-overview">
-                <div className="container minimal-container">
-                    <Reveal>
-                        <p className="pj-overview-text">
-                            The Betach Place is a thoughtfully planned residential development in Winston-Salem, NC, featuring 23 modern homes designed for young professionals, families, and retirees. <br /><br />
-                            Every aspect of the project is designed to balance comfort, durability, and long-term value, creating a community that supports modern living.
-                        </p>
-                    </Reveal>
-                    <Reveal delay={0.3}>
-                        <div className="os-vision-bar" style={{ margin: '4rem auto 0' }} />
-                    </Reveal>
+                <div className="container pj-vision-grid">
+                    <div className="pj-vision-eyebrow-col">
+                        <Reveal dir="left">
+                            <span className="sv-gold-label">The Vision</span>
+                            <div className="pj-vision-line" />
+                        </Reveal>
+                    </div>
+
+                    <div className="pj-vision-content">
+                        <Reveal delay={0.2} dir="right">
+                            <h2 className="pj-vision-lead">
+                                A thoughtfully planned residential community in Winston-Salem, NC, 
+                                featuring 23 modern homes designed for young professionals, families, and retirees.
+                            </h2>
+                        </Reveal>
+                        
+                        <Reveal delay={0.35} dir="right">
+                            <div className="pj-vision-body-wrap">
+                                <p className="pj-vision-body">
+                                    Every aspect of The Betach Place is designed to balance comfort, durability, and long-term value — 
+                                    creating a community that supports modern living through intelligent site planning and high-quality construction.
+                                </p>
+                                <div className="pj-vision-watermark">VM</div>
+                            </div>
+                        </Reveal>
+                    </div>
                 </div>
             </section>
 
@@ -138,7 +154,7 @@ const Projects = ({ onBack }: { onBack: () => void }) => {
             ════════════════════════════════════════ */}
             <section className="pj-features">
                 <div className="container">
-                    <Reveal className="mb-16">
+                    <Reveal className="pj-features-header">
                         <span className="sv-gold-label centered">Core Specifications</span>
                     </Reveal>
                     <div className="pj-features-grid">

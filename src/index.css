@@ -143,6 +143,46 @@ button {
   outline: none;
 }
 
+/* ── BACK BUTTON (GLOBAL) ── */
+.story-back-btn {
+  position: fixed;
+  top: 3rem;
+  left: 3rem;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.story-back-btn:hover {
+  background: #C6A87D;
+  color: #000;
+  transform: translateX(-4px);
+}
+
+@media (max-width: 768px) {
+  .story-back-btn {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+  }
+}
+
 .nav-logo-img {
   height: 50px;
   width: auto;

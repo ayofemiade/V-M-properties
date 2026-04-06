@@ -7,32 +7,6 @@
     color: #0A0A0A;
 }
 
-.story-back-btn {
-    position: fixed;
-    top: 3rem;
-    left: 3rem;
-    z-index: 100;
-    background: #0A0A0A;
-    border: none;
-    color: #ffffff;
-    padding: 1rem 2rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.story-back-btn:hover {
-    background: #C6A87D;
-    color: #000;
-    transform: translateX(-8px);
-}
-
-
-
 /* ── HERO ── */
 .ct-hero {
     position: relative;
@@ -401,16 +375,6 @@
     .ct-hero {
         padding: 8rem 0 3rem;
         min-height: 50vh;
-    }
-
-    .story-back-btn {
-        top: 1rem;
-        left: 1rem;
-        padding: 0.6rem 1.2rem;
-        font-size: 0.8rem;
-        background: rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(12px);
-        border-radius: 50px;
     }
 
 
