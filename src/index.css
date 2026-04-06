@@ -1631,6 +1631,21 @@ button {
     align-items: flex-start;
     gap: 1rem;
   }
+
+  .ba-label {
+    top: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  .ba-label-before {
+    left: 1rem;
+  }
+
+  .ba-label-after {
+    right: 1rem;
+  }
 }
 
 /* Premium Testimonial Section */

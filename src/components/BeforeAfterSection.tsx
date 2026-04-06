@@ -76,7 +76,7 @@ const BeforeAfterSection = () => {
                             draggable="false"
                             loading="lazy"
                         />
-                        <div className="ba-label ba-label-after">Proposed Development</div>
+                        <div className="ba-label ba-label-after">PROPOSED</div>
                     </div>
 
                     {/* Before Image (Overlay clipped - Raw Structure) */}
@@ -93,7 +93,7 @@ const BeforeAfterSection = () => {
                             draggable="false"
                             loading="lazy"
                         />
-                        <div className="ba-label ba-label-before">Current State</div>
+                        <div className="ba-label ba-label-before">CURRENT</div>
                     </div>
 
                     {/* Slider Handle */}
