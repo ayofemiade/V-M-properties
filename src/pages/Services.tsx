@@ -191,22 +191,21 @@ const Services = ({ onBack }: { onBack: () => void }) => (
             SECTION 2 — OVERVIEW
         ══════════════════════════ */}
         <section className="sv-overview">
-            <div className="container sv-overview-inner">
-                <Reveal>
-                    <span className="sv-gold-label centered">End-to-End Real Estate</span>
-                </Reveal>
-                <motion.p
-                    className="sv-overview-text"
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: '-80px' }}
-                    transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1], delay: 0.15 }}
-                >
-                    We provide end-to-end real estate solutions — from ground-up development to strategic investment partnerships — designed to deliver long-term value for communities, clients, and capital alike.
-                </motion.p>
-                <Reveal delay={0.3}>
-                    <div className="sv-overview-bar" />
-                </Reveal>
+            <div className="container">
+                <div className="sv-overview-grid">
+                    <div className="sv-overview-eyebrow-col">
+                        <span className="sv-gold-label">Our Philosophy</span>
+                        <div className="sv-overview-line" />
+                    </div>
+                    <div className="sv-overview-content">
+                        <Reveal>
+                            <p className="sv-overview-lead">
+                                We provide end-to-end real estate solutions from ground-up development to strategic investment partnerships,  designed to deliver long-term value for communities, clients, and capital alike.
+                            </p>
+                        </Reveal>
+                        <div className="sv-overview-watermark">VM</div>
+                    </div>
+                </div>
             </div>
         </section>
 
