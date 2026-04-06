@@ -405,70 +405,149 @@
 
 /* ── FUTURE ── */
 .pj-future {
-    padding: 12rem 0;
+    padding: 12rem 5%;
     background: #0A0A0A;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .pj-future-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 300;
     text-align: center;
     margin: 1.5rem 0 2rem;
     color: #ffffff;
+    letter-spacing: -0.02em;
 }
 
 .pj-future-sub {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 6rem;
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 0 auto 8rem;
     text-align: center;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.8;
 }
 
 .pj-future-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 4rem;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .pj-future-card {
     position: relative;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.pj-future-card-img {
-    height: 480px;
-    background: linear-gradient(135deg, #121212 0%, #080808 100%);
+.pj-future-img-container {
     position: relative;
+    height: 420px;
+    overflow: hidden;
+}
+
+.pj-future-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55) grayscale(1);
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1), filter 1.2s ease;
+}
+
+.pj-future-shine {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.04) 50%, 
+        transparent 100%
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.pj-future-card:hover .pj-future-shine {
+    left: 150%;
+    transition: left 0.9s ease-in-out;
+}
+
+.pj-future-card:hover {
+    border-color: rgba(198, 168, 125, 0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.pj-future-card:hover .pj-future-img {
+    transform: scale(1.08);
+    filter: brightness(0.8) grayscale(0.6);
+}
+
+.pj-future-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, transparent 20%, rgba(10, 10, 10, 0.4) 100%);
+    z-index: 3;
+}
+
+.pj-future-badge {
+    background: rgba(198, 168, 125, 0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(198, 168, 125, 0.35);
+    color: #C6A87D;
+    padding: 1rem 2.8rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.45em;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .pj-future-card-content {
-    padding: 3rem;
-    background: #0A0A0A;
-}
-
-.pj-future-status {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: #C6A87D;
-    display: block;
-    margin-bottom: 1.5rem;
+    padding: 4rem 3rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01) 0%, transparent 100%);
 }
 
 .pj-future-name {
     font-size: 1.8rem;
     font-weight: 300;
-    margin-bottom: 0.8rem;
     color: #ffffff;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+    font-family: inherit;
+}
+
+.pj-name-bar {
+    width: 32px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0 auto 2.5rem;
+    transition: width 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), background 0.6s ease;
+}
+
+.pj-future-card:hover .pj-name-bar {
+    width: 80px;
+    background: #C6A87D;
 }
 
 .pj-future-meta {
-    font-size: 0.95rem;
+    font-size: 0.82rem;
     color: rgba(255, 255, 255, 0.4);
-    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 400;
 }
 
 /* ── TRUST ── */

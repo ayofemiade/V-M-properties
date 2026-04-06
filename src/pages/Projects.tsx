@@ -263,14 +263,33 @@ const Projects = ({ onBack }: { onBack: () => void }) => {
                     </Reveal>
 
                     <div className="pj-future-grid">
-                        {[1, 2].map((i) => (
-                            <Reveal key={i} delay={i * 0.15}>
+                        {[
+                            { 
+                                id: 1, 
+                                name: "Signature Development · I", 
+                                meta: "Luxury Living Series · Phase 1", 
+                                img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=40&blur=10" 
+                            },
+                            { 
+                                id: 2, 
+                                name: "Signature Development · II", 
+                                meta: "Modern Urban Collection · Planning", 
+                                img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=40&blur=10" 
+                            }
+                        ].map((proj) => (
+                            <Reveal key={proj.id} delay={proj.id * 0.15}>
                                 <div className="pj-future-card">
-                                    <div className="pj-future-card-img" />
+                                    <div className="pj-future-img-container">
+                                        <img src={proj.img} alt="Coming Soon Teaser" className="pj-future-img" />
+                                        <div className="pj-future-shine" />
+                                        <div className="pj-future-overlay">
+                                            <span className="pj-future-badge">Coming Soon</span>
+                                        </div>
+                                    </div>
                                     <div className="pj-future-card-content">
-                                        <span className="pj-future-status">Coming Soon</span>
-                                        <h3 className="pj-future-name">Residential Project · WS-{i}</h3>
-                                        <p className="pj-future-meta">In Acquisition / Planning Phase</p>
+                                        <h3 className="pj-future-name">{proj.name}</h3>
+                                        <div className="pj-name-bar" />
+                                        <p className="pj-future-meta">{proj.meta}</p>
                                     </div>
                                 </div>
                             </Reveal>
