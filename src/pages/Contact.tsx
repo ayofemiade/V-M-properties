@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../contact.css';
 
@@ -25,6 +25,7 @@ const Reveal = ({
 
 const Contact = ({ onBack }: { onBack: () => void }) => {
     const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
+    const formRef = useRef<HTMLFormElement>(null);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -32,6 +33,16 @@ const Contact = ({ onBack }: { onBack: () => void }) => {
         subject: 'Investment Inquiry',
         message: ''
     });
+
+    const scrollToForm = () => {
+        formRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    useEffect(() => {
+        // Force scroll to top on mount to fix mobile "direct to bottom" bug
+        window.scrollTo(0, 0);
+    }, []);
+    
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -115,6 +126,7 @@ const Contact = ({ onBack }: { onBack: () => void }) => {
                                 </motion.div>
                             ) : (
                                 <motion.form
+                                    ref={formRef}
                                     className="ct-form-premium"
                                     onSubmit={handleSubmit}
                                     initial={{ opacity: 0 }}
@@ -242,7 +254,7 @@ const Contact = ({ onBack }: { onBack: () => void }) => {
                         <p className="ct-cta-sub">We’re ready when you are.</p>
                     </Reveal>
                     <Reveal delay={0.2} className="mt-12">
-                        <button className="stadium-btn premium-btn mx-auto" onClick={() => window.scrollTo({ top: 400, behavior: 'smooth' })}>
+                        <button className="stadium-btn premium-btn mx-auto" onClick={scrollToForm}>
                             Send a Message &rarr;
                         </button>
                     </Reveal>

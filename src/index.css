@@ -1258,7 +1258,7 @@ button {
 /* Slow zoom effect on hover */
 .why-row-premium.hovered .why-row-bg {
   opacity: 1;
-  transform: translateX(-50%) scale(1.03);
+  transform: scale(1.03);
 }
 
 /* Darkening overlay so text remains readable against bright images */

@@ -26,6 +26,7 @@ function App() {
   const closeMenu = () => setMenuOpen(false);
 
   const goTo = (p: Page, anchor?: string) => {
+    const isNewPage = page !== p;
     setPage(p);
     closeMenu();
 
@@ -35,7 +36,8 @@ function App() {
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Use instant scroll for page changes to avoid jarring 'fly-over' animations
+      window.scrollTo({ top: 0, behavior: isNewPage ? 'auto' : 'smooth' });
     }
   };
 
@@ -158,10 +160,10 @@ function App() {
         </div>
 
         <main>
-          <HeroSection />
+          <HeroSection onNavigate={goTo} />
           <BrandStory onNavigate={goTo} />
           <ServicesSection onNavigate={goTo} />
-          <FeaturedProperties />
+          <FeaturedProperties onNavigate={goTo} />
           <WhyChooseUs />
           <BeforeAfterSection />
           <TestimonialSection />

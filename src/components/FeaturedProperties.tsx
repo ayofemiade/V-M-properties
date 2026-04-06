@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const PropertyCard = ({ prop, idx }: { prop: any, idx: number }) => {
+const PropertyCard = ({ prop, idx, onNavigate }: { prop: any, idx: number, onNavigate?: (p: any) => void }) => {
     const cardRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: cardRef,
@@ -48,7 +48,7 @@ const PropertyCard = ({ prop, idx }: { prop: any, idx: number }) => {
                     <div className="showcase-desc">{prop.desc}</div>
                     <div className="showcase-bottom">
                         <div className="showcase-price">{prop.price}</div>
-                        <button className="stadium-btn-outline">View Details</button>
+                        <button className="stadium-btn-outline" onClick={() => onNavigate?.('projects')}>View Details</button>
                     </div>
                 </div>
             </motion.div>
@@ -56,7 +56,11 @@ const PropertyCard = ({ prop, idx }: { prop: any, idx: number }) => {
     );
 };
 
-const FeaturedProperties = () => {
+interface FeaturedPropertiesProps {
+    onNavigate?: (page: 'home' | 'our-story' | 'services' | 'projects' | 'contact', anchor?: string) => void;
+}
+
+const FeaturedProperties = ({ onNavigate }: FeaturedPropertiesProps) => {
     const properties = [
         {
             title: "The Betach Place",
@@ -102,7 +106,7 @@ const FeaturedProperties = () => {
 
                 <div className="properties-showcase-list">
                     {properties.map((prop, idx) => (
-                        <PropertyCard key={idx} prop={prop} idx={idx} />
+                        <PropertyCard key={idx} prop={prop} idx={idx} onNavigate={onNavigate} />
                     ))}
                 </div>
             </div>

@@ -8,7 +8,11 @@ const BG_URL = `https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?aut
 const BG_IMAGE = `url('${BG_URL}')`;
 
 
-const HeroSection = () => {
+interface HeroSectionProps {
+    onNavigate?: (page: 'home' | 'our-story' | 'services' | 'projects' | 'contact', anchor?: string) => void;
+}
+
+const HeroSection = ({ onNavigate }: HeroSectionProps) => {
     const sectionRef = useRef<HTMLElement>(null);
 
     const { scrollYProgress } = useScroll({
@@ -122,7 +126,7 @@ const HeroSection = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1.2, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
                         >
-                            <button className="stadium-btn premium-btn">
+                            <button className="stadium-btn premium-btn" onClick={() => onNavigate?.('projects')}>
                                 Find Properties <span className="btn-arrow">&rarr;</span>
                             </button>
                         </motion.div>
