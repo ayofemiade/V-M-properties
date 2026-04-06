@@ -35,7 +35,14 @@ body {
   color: var(--color-secondary);
   font-family: var(--font-body);
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 h1,
@@ -1053,6 +1060,7 @@ button {
 .featured-section {
   padding: var(--spacing-xl) 0;
   background-color: var(--color-primary);
+  overflow-x: hidden;
 }
 
 .section-title {
@@ -1241,9 +1249,7 @@ button {
 .why-row-bg {
   position: absolute;
   inset: 0;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -1440,6 +1446,9 @@ button {
   /* On mobile, hover doesn't exist, so display backgrounds persistently */
   .why-row-bg {
     opacity: 1;
+    width: 100%;
+    left: 0;
+    transform: none;
   }
 
   .why-row-overlay {
@@ -1836,6 +1845,12 @@ button {
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+  .cta-watermark {
+    font-size: 15rem;
+  }
+}
+
 .cta-content-premium {
   position: relative;
   z-index: 2;
@@ -1857,7 +1872,7 @@ button {
 }
 
 .cta-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   color: #666;
   max-width: 600px;
   margin: 0 auto 4rem auto;
