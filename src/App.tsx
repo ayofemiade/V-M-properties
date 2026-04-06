@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import './index.css';
 import HeroSection from './components/HeroSection';
@@ -17,11 +17,15 @@ import Contact from './pages/Contact';
 
 type Page = 'home' | 'our-story' | 'services' | 'projects' | 'contact';
 
-
-
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [page, setPage] = useState<Page>('home');
+  
+  // Initialize state from URL hash if present, otherwise default to home
+  const [page, setPage] = useState<Page>(() => {
+    const hash = window.location.hash.replace('#', '') as Page;
+    const validPages: Page[] = ['home', 'our-story', 'services', 'projects', 'contact'];
+    return validPages.includes(hash) ? hash : 'home';
+  });
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -29,6 +33,13 @@ function App() {
     const isNewPage = page !== p;
     setPage(p);
     closeMenu();
+
+    // Update URL hash to persist state across reloads
+    if (p === 'home') {
+      window.history.pushState(null, '', window.location.pathname);
+    } else {
+      window.location.hash = p;
+    }
 
     if (anchor) {
       setTimeout(() => {
@@ -40,6 +51,23 @@ function App() {
       window.scrollTo({ top: 0, behavior: isNewPage ? 'auto' : 'smooth' });
     }
   };
+
+  // Sync state with browser back/forward buttons
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '') as Page;
+      const validPages: Page[] = ['home', 'our-story', 'services', 'projects', 'contact'];
+      const targetPage = validPages.includes(hash) ? hash : 'home';
+      
+      if (targetPage !== page) {
+        setPage(targetPage);
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [page]);
 
   if (page === 'our-story') {
     return (

@@ -399,8 +399,16 @@
 
 @media (max-width: 768px) {
     .ct-hero {
-        padding: 6rem 0 3rem;
+        padding: 8rem 0 3rem;
         min-height: 50vh;
+    }
+
+    .story-back-btn {
+        top: 1.5rem;
+        left: 1.5rem;
+        padding: 0.8rem 1.4rem;
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
     }
 
 
