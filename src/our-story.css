@@ -1,5 +1,6 @@
 /* ══════════════════════════════════════════════
    OUR STORY PAGE
+   Last Modified: Fixed mobile phone wrap alignment
 ══════════════════════════════════════════════ */
 
 /* ── HERO ── */
@@ -593,6 +594,22 @@
         backdrop-filter: blur(8px);
         padding: 0.6rem 1rem;
         border-radius: 12px;
+    }
+
+    .os-closing-contact {
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-top: 5rem;
+    }
+
+    .os-caption-dot {
+        display: none;
+    }
+
+    .os-closing-link {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.45);
+        letter-spacing: 0.05em;
     }
 
     /* On mobile serve a much smaller hero bg */
