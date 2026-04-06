@@ -572,6 +572,17 @@
 }
 
 @media (max-width: 768px) {
+    .story-back-btn {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    .os-mission {
+        padding-top: 10rem;
+    }
+
     .os-founder-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -603,8 +614,17 @@
     }
 
     .os-image-break-caption {
-        font-size: 0.78rem;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.4rem;
+        font-size: 0.72rem;
         right: 5%;
+        bottom: 1.5rem;
+        text-align: right;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+        padding: 0.6rem 1rem;
+        border-radius: 12px;
     }
 
     /* On mobile serve a much smaller hero bg */
