@@ -34,14 +34,12 @@ body {
   background-color: var(--color-primary);
   color: var(--color-secondary);
   font-family: var(--font-body);
-  overflow-x: hidden;
-  max-width: 100vw;
-  width: 100%;
+  /* clip is safer for sticky elements than hidden, as it doesn't create a scroll container */
+  overflow-x: clip; 
   -webkit-font-smoothing: antialiased;
 }
 
 .app-container {
-  overflow-x: hidden;
   width: 100%;
 }
 
