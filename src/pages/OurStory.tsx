@@ -106,26 +106,8 @@ const OurStory = ({ onBack }: { onBack: () => void }) => {
             ════════════════════════════════════════ */}
             <section className="os-founder">
                 <div className="container os-founder-grid">
-                    {/* Placeholder — replace with real founder/team photo */}
-                    <motion.div
-                        className="os-founder-img-wrap"
-                        initial={{ opacity: 0, x: -60 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: '-80px' }}
-                        transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1] }}
-                    >
-                        <div className="os-founder-placeholder">
-                            <div className="os-placeholder-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                    <circle cx="12" cy="7" r="4" />
-                                </svg>
-                            </div>
-                            <p className="os-placeholder-label">Founder Photo</p>
-                            <p className="os-placeholder-sub">Coming Soon</p>
-                        </div>
-                        <div className="os-founder-img-accent" />
-                    </motion.div>
+
+
 
                     {/* Text */}
                     <div className="os-founder-text">
@@ -148,7 +130,7 @@ const OurStory = ({ onBack }: { onBack: () => void }) => {
 
                         <Reveal delay={0.4}>
                             <p className="os-body-text">
-                                We planted our flag in Winston-Salem, North Carolina — a city full of working families, retirees, and young professionals who deserved modern, energy-efficient housing that respected their daily lives. Our first development, <strong>The Betach Place</strong>, is a 23-home community designed precisely for them: durable, low-maintenance, thoughtfully laid out, and built to hold its value for decades.
+                                We planted our flag in Winston-Salem, North Carolina — a city full of working families, retirees, and young professionals who deserved modern, energy-efficient housing that respected their daily lives. Our first development, a <strong>multifamily residential development</strong>, is designed precisely for them: durable, low-maintenance, thoughtfully laid out, and built to hold its value for decades.
                             </p>
                         </Reveal>
 
@@ -255,7 +237,7 @@ const OurStory = ({ onBack }: { onBack: () => void }) => {
                         decoding="async"
                     />
                     <div className="os-image-break-caption">
-                        <span>The Betach Place — Winston-Salem, NC</span>
+                        <span>Multifamily Residential Development — Winston-Salem, NC</span>
                         <span className="os-caption-dot">·</span>
                         <span>Target: Q4 2025</span>
                     </div>

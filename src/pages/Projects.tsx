@@ -86,9 +86,9 @@ const Projects = ({ onBack }: { onBack: () => void }) => {
             </section>
 
             {/* ════════════════════════════════════════
-                SECTION 2 — THE BETACH PLACE (FEATURED)
+                SECTION 2 — MULTIFAMILY RESIDENTIAL DEVELOPMENT (FEATURED)
             ════════════════════════════════════════ */}
-            <section className="pj-flagship" ref={flagshipRef} id="betach">
+            <section className="pj-flagship" ref={flagshipRef} id="multifamily-development">
                 <div className="pj-flagship-label">
                     <Reveal dir="left">
                         <span className="sv-gold-label">Signature Project</span>
@@ -99,17 +99,17 @@ const Projects = ({ onBack }: { onBack: () => void }) => {
                     <div className="pj-flagship-img-wrap">
                         <motion.img
                             src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=80"
-                            alt="The Betach Place Rendering"
+                            alt="Multifamily Residential Development Rendering"
                             style={{ y: flagshipImgY }}
                         />
                     </div>
                     <div className="pj-flagship-text">
                         <Reveal delay={0.2} dir="right">
-                            <h2 className="pj-flagship-title">The Betach <br /><span className="muted">Place.</span></h2>
+                            <h2 className="pj-flagship-title">Multifamily <br /><span className="muted">Residential Development.</span></h2>
                         </Reveal>
                         <Reveal delay={0.3} dir="right">
                             <p className="pj-flagship-sub">
-                                A modern residential community designed for long-term living and investment value. 23 thoughtfully planned units in Winston-Salem, NC.
+                                A modern multifamily residential development designed for long-term living and investment value in Winston-Salem, NC.
                             </p>
                         </Reveal>
                     </div>
@@ -131,15 +131,15 @@ const Projects = ({ onBack }: { onBack: () => void }) => {
                     <div className="pj-vision-content">
                         <Reveal delay={0.2} dir="right">
                             <h2 className="pj-vision-lead">
-                                A thoughtfully planned residential community in Winston-Salem, NC, 
-                                featuring 23 modern homes designed for young professionals, families, and retirees.
+                                A thoughtfully planned multifamily residential development in Winston-Salem, NC, 
+                                designed for young professionals, families, and retirees.
                             </h2>
                         </Reveal>
                         
                         <Reveal delay={0.35} dir="right">
                             <div className="pj-vision-body-wrap">
                                 <p className="pj-vision-body">
-                                    Every aspect of The Betach Place is designed to balance comfort, durability, and long-term value — 
+                                    Every aspect of this multifamily residential development is designed to balance comfort, durability, and long-term value — 
                                     creating a community that supports modern living through intelligent site planning and high-quality construction.
                                 </p>
                                 <div className="pj-vision-watermark">VM</div>

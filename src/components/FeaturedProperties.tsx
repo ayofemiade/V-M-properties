@@ -63,13 +63,13 @@ interface FeaturedPropertiesProps {
 const FeaturedProperties = ({ onNavigate }: FeaturedPropertiesProps) => {
     const properties = [
         {
-            title: "The Betach Place",
+            title: "Multifamily Residential Development",
             target: "Winston-Salem, NC",
             price: "Target: Q4 2025",
             desc: (
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                     <p style={{ lineHeight: "1.5", margin: 0, fontSize: "0.95rem" }}>
-                        Thoughtfully planned residential development featuring 23 modern homes designed for young professionals, families, and retirees.
+                        Thoughtfully planned multifamily residential development designed for young professionals, families, and retirees.
                     </p>
 
                     <div style={{ padding: "1rem", background: "rgba(0,0,0,0.03)", borderRadius: "6px" }}>
